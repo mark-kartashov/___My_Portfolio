@@ -9,8 +9,12 @@
 	background-color: $accent
 	color: #fff
 
-body
+html
 	font-size: 16px
+body
+	background: url(../img/main.png) no-repeat
+	background-size: cover
+	background-attachment: fixed
 	min-width: 320px
 	position: relative
 	line-height: 1.65
@@ -32,12 +36,114 @@ body
 	&.img-width
 		width: 100%
 
-.text-center
-	text-align: center
-
 b, strong
 	font-weight: bold
 
+
+// ------------ Main Aside ------------ //
+
+.main-aside
+	position: absolute
+	z-index: 1
+	left: 0
+	height: 100vh
+	width: 150px
+	display: block
+	background: inherit;
+	.wrap
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		height: 100%
+		background: inherit
+		&-middle
+			background: inherit
+			.menu
+				width: 100%
+				height: 100%
+				background: inherit
+				&_icon
+					display: block
+					position: absolute
+					left: 20px
+					cursor: pointer
+					width: 40px
+					height: 40px
+					overflow: hidden
+					-webkit-user-select: none
+					-moz-user-select: none
+					-ms-user-select: none
+					-o-user-select: none
+					user-select: none
+					span
+						display: inline-block
+						width: 7px
+						height: 7px
+						margin: 2px auto
+						line-height: 100px
+						border-radius: 100%
+						background: #fff
+						-webkit-transition: .25s all
+						-moz-transition: .25s all
+						-ms-transition: .25s all
+						-o-transition: .25s all
+						transition: .25s all
+					&:hover
+						span
+							width: 7px
+							height: 7px
+							opacity: 0
+							-webkit-transition: .25s all
+							-moz-transition: .25s all
+							-ms-transition: .25s all
+							-o-transition: .25s all
+							transition: .25s all
+						span
+							&:nth-child(2)
+								transform: scale(2)
+								transform-origin: center center
+								opacity: 1
+
+				&-wrap
+					display: none
+			.menu.menu_state_open
+				overflow: hidden
+				background: inherit
+				&::before
+					content: ''
+					top: 0
+					left: 0
+					width: 100%
+					height: 100vh
+					background: inherit
+					position: absolute
+					filter: blur(10px)
+				.menu_icon
+					span
+						display: block
+					&:hover
+						transform: rotate(90deg)
+						transform-origin: center center
+						span
+							display: block
+							width: 2px
+							height: 2px
+							opacity: .3
+						span
+							&:nth-child(2)
+								width: 7px
+								height: 7px
+								transform: scale(2)
+								opacity: 1
+				.menu-wrap
+					display: block
+					position: absolute
+					background: inherit
+
+.first-section
+	width: 100vw
+	height: 100vh
 
 
 @import "media" // Always at the end
