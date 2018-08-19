@@ -44,10 +44,10 @@ b, strong
 
 .main-aside
 	position: absolute
+	width: 150px
 	z-index: 1
 	left: 0
 	height: 100vh
-	width: 150px
 	display: block
 	background: inherit
 	overflow: hidden
@@ -85,21 +85,21 @@ b, strong
 						line-height: 100px
 						border-radius: 100%
 						background: #fff
-						-webkit-transition: .25s all
-						-moz-transition: .25s all
-						-ms-transition: .25s all
-						-o-transition: .25s all
-						transition: .25s all
+						-webkit-transition: all .25s 
+						-moz-transition: all .25s
+						-ms-transition: all .25s
+						-o-transition: all .25s
+						transition: all .25s
 					&:hover
 						span
 							width: 7px
 							height: 7px
 							opacity: 0
-							-webkit-transition: .25s all
-							-moz-transition: .25s all
-							-ms-transition: .25s all
-							-o-transition: .25s all
-							transition: .25s all
+							-webkit-transition: all .25s 
+							-moz-transition: all .25s
+							-ms-transition: all .25s
+							-o-transition: all .25s
+							transition: all .25s
 						span
 							&:nth-child(2)
 								transform: scale(2)
@@ -114,16 +114,16 @@ b, strong
 				&::before
 					content: ''
 					position: absolute
-					width: 100%
+					width: 120%
 					height: 110vh
 					top: 0
 					left: 0
 					background: inherit
-					-webkit-filter: blur(5px)
-					-moz-filter: blur(5px)
-					-ms-filter: blur(5px)
-					-o-filter: blur(5px)
-					filter: blur(5px)
+					-webkit-filter: blur(10px)
+					-moz-filter: blur(10px)
+					-ms-filter: blur(10px)
+					-o-filter: blur(10px)
+					filter: blur(10px)
 				.menu_icon
 					span
 						display: block
@@ -148,6 +148,21 @@ b, strong
 				.menu-wrap
 					display: block
 					position: absolute
+.main-aside.hidden-aside
+	width: 150px
+	-webkit-transition: all .45s 
+	-moz-transition: all .45s
+	-ms-transition: all .45s
+	-o-transition: all .45s
+	transition: all .45s
+.main-aside.full-aside
+	width: 50vw
+	-webkit-transition: all .45s 
+	-moz-transition: all .45s
+	-ms-transition: all .45s
+	-o-transition: all .45s
+	transition: all .45s
+
 
 .first-section
 	width: 100vw
