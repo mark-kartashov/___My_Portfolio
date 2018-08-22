@@ -12,7 +12,7 @@
 html
 	font-size: 16px
 body
-	background: url(../img/main.png) no-repeat
+	background: url(../img/main.jpg) no-repeat
 	background-size: cover
 	background-attachment: fixed
 	min-width: 320px
@@ -42,126 +42,276 @@ b, strong
 
 // ------------ Main Aside ------------ //
 
-.main-aside
-	position: absolute
-	width: 150px
-	z-index: 1
-	left: 0
+aside
+	width: 100px
 	height: 100vh
-	display: block
+	position: absolute
+	left: 0
+	top: 0
 	background: inherit
 	overflow: hidden
-	.wrap
-		display: flex
-		justify-content: center
-		align-items: center
-		flex-direction: column
-		height: 100%
-		background: inherit
-		&-middle
+	-webkit-transition: all .5s ease-out 
+	-moz-transition: all .5s ease-out
+	-ms-transition: all .5s ease-out
+	-o-transition: all .5s ease-out
+	transition: all .5s ease-out
+	&.blur
+		overflow: hidden
+		width: 50vh
+		-webkit-transition: all .5s ease-out 
+		-moz-transition: all .5s ease-out
+		-ms-transition: all .5s ease-out
+		-o-transition: all .5s ease-out
+		transition: all .5s ease-out
+		&::before
+			content: ""
+			position: absolute
+			width: 120%
+			height: 120%
+			top: 0
+			left: 0
 			background: inherit
-			.menu
-				width: 100%
-				height: 100%
+			-webkit-filter: blur(10px)
+			-moz-filter: blur(10px)
+			-ms-filter: blur(10px)
+			-o-filter: blur(10px)
+			filter: blur(10px)
+	.flex-container
+		background: inherit
+		height: 100%
+		display: -ms-flexbox
+		display: -webkit-flex
+		display: flex
+		-webkit-flex-direction: column
+		-ms-flex-direction: column
+		flex-direction: column
+		-webkit-flex-wrap: nowrap
+		-ms-flex-wrap: nowrap
+		flex-wrap: nowrap
+		-webkit-justify-content: center
+		-ms-flex-pack: center
+		justify-content: center
+		-webkit-align-content: center
+		-ms-flex-line-pack: center
+		align-content: center
+		-webkit-align-items: flex-start
+		-ms-flex-align: start
+		align-items: flex-start
+		.flex-item
+			background: inherit
+			-webkit-order: 0
+			-ms-flex-order: 0
+			order: 0
+			-webkit-flex: 0 1 auto
+			-ms-flex: 0 1 auto
+			flex: 0 1 auto
+			-webkit-align-self: auto
+			-ms-flex-item-align: auto
+			align-self: auto
+			height: 33%
+	// Main Menu //
+	.menu-wrap
+		background: inherit
+		.menu-btn
+			background: transparent
+			display: block
+			outline: none
+			border: none
+			-webkit-transition: all .25s ease-out
+			-moz-transition: all .25s ease-out
+			-ms-transition: all .25s ease-out
+			-o-transition: all .25s ease-out
+			transition: all .25s ease-out
+			span
+				display: inline-block
+				width: 7px
+				height: 7px
+				border-radius: 100%
+				background: #fff
+			&:hover
+				span
+					&:nth-child(2)
+						transform: scale(2)
+		.is-active
+			-webkit-transform: rotate(90deg)
+			-moz-transform: rotate(90deg)
+			-ms-transform: rotate(90deg)
+			-o-transform: rotate(90deg)
+			transform: rotate(90deg)
+			-webkit-transition: all .25s ease-out 
+			-moz-transition: all .25s ease-out
+			-ms-transition: all .25s ease-out
+			-o-transition: all .25s ease-out
+			transition: all .25s ease-out
+		.menu
+			display: block
+			position: absolute
+			width: 50vh
+			&__list
 				background: inherit
-				&_icon
-					display: block
-					position: absolute
-					left: 20px
-					cursor: pointer
-					width: 40px
-					height: 40px
-					overflow: hidden
-					-webkit-user-select: none
-					-moz-user-select: none
-					-ms-user-select: none
-					-o-user-select: none
-					user-select: none
-					span
-						display: inline-block
-						width: 7px
-						height: 7px
-						margin: 2px auto
-						line-height: 100px
-						border-radius: 100%
-						background: #fff
-						-webkit-transition: all .25s 
-						-moz-transition: all .25s
-						-ms-transition: all .25s
-						-o-transition: all .25s
-						transition: all .25s
-					&:hover
-						span
-							width: 7px
-							height: 7px
-							opacity: 0
-							-webkit-transition: all .25s 
-							-moz-transition: all .25s
-							-ms-transition: all .25s
-							-o-transition: all .25s
-							transition: all .25s
-						span
-							&:nth-child(2)
-								transform: scale(2)
-								transform-origin: center center
-								opacity: 1
+				padding-left: 0
+				display: block
+				-webkit-transform: translateX(-100%)
+				-moz-transform: translateX(-100%)
+				-ms-transform: translateX(-100%)
+				-o-transform: translateX(-100%)
+				transform: translateX(-100%)
+				-webkit-transition: all .25s ease-out 
+				-moz-transition: all .25s ease-out
+				-ms-transition: all .25s ease-out
+				-o-transition: all .25s ease-out
+				transition: all .25s ease-out
+			&__list--play
+				background: inherit
+				-webkit-transform: translateX(0)
+				-moz-transform: translateX(0)
+				-ms-transform: translateX(0)
+				-o-transform: translateX(0)
+				transform: translateX(0)
 
-				&-wrap
-					display: none
-			.menu.menu_state_open
-				overflow: hidden
-				background: inherit
-				&::before
-					content: ''
-					position: absolute
-					width: 120%
-					height: 110vh
-					top: 0
-					left: 0
-					background: inherit
-					-webkit-filter: blur(10px)
-					-moz-filter: blur(10px)
-					-ms-filter: blur(10px)
-					-o-filter: blur(10px)
-					filter: blur(10px)
-				.menu_icon
-					span
-						display: block
-					&:hover
-						-webkit-transform: rotate(90deg)
-						-moz-transform: rotate(90deg)
-						-ms-transform: rotate(90deg)
-						-o-transform: rotate(90deg)
-						transform: rotate(90deg)
-						transform-origin: center center
-						span
-							display: block
-							width: 2px
-							height: 2px
-							opacity: .3
-						span
-							&:nth-child(2)
-								width: 7px
-								height: 7px
-								transform: scale(2)
-								opacity: 1
-				.menu-wrap
-					display: block
-					position: absolute
-.main-aside.hidden-aside
-	width: 150px
-	-webkit-transition: all .45s 
-	-moz-transition: all .45s
-	-ms-transition: all .45s
-	-o-transition: all .45s
-	transition: all .45s
-.main-aside.full-aside
-	width: 50vw
-	-webkit-transition: all .45s 
-	-moz-transition: all .45s
-	-ms-transition: all .45s
-	-o-transition: all .45s
-	transition: all .45s
+// .main-aside
+// 	width: 100px
+// 	z-index: 1
+// 	left: 0
+// 	height: 100vh
+// 	background: inherit
+// 	overflow: hidden
+// 	.wrap
+// 		height: 100%
+// 		background: inherit
+// 		&-middle
+// 			background: inherit
+// 			.menu
+// 				background: inherit
+// 				-webkit-transition: all .25s 
+// 				-moz-transition: all .25s
+// 				-ms-transition: all .25s
+// 				-o-transition: all .25s
+// 				transition: all .25s
+// 				&_icon
+// 					cursor: pointer
+// 					display: block
+// 					position: absolute
+// 					left: 20px
+// 					width: 40px
+// 					height: 40px
+// 					overflow: hidden
+// 					-webkit-user-select: none
+// 					-moz-user-select: none
+// 					-ms-user-select: none
+// 					-o-user-select: none
+// 					user-select: none
+// 					span
+// 						display: inline-block
+// 						width: 7px
+// 						height: 7px
+// 						margin: 2px auto
+// 						line-height: 100px
+// 						border-radius: 100%
+// 						background: #fff
+// 						-webkit-transition: all .25s 
+// 						-moz-transition: all .25s
+// 						-ms-transition: all .25s
+// 						-o-transition: all .25s
+// 						transition: all .25s
+// 					&:hover
+// 						span
+// 							width: 7px
+// 							height: 7px
+// 							opacity: 0
+// 							-webkit-transition: all .25s 
+// 							-moz-transition: all .25s
+// 							-ms-transition: all .25s
+// 							-o-transition: all .25s
+// 							transition: all .25s
+// 						span
+// 							&:nth-child(2)
+// 								-webkit-transform: perspective(200px) scale(2)
+// 								-moz-transform: perspective(200px) scale(2)
+// 								-ms-transform: perspective(200px) scale(2)
+// 								-o-transform: perspective(200px) scale(2)
+// 								transform: perspective(200px) scale(2)
+// 								transform-origin: center center
+// 								opacity: 1
+// 				&-wrap
+// 					display: none
+// 			.menu.menu_state_open
+// 				overflow: hidden
+// 				background: inherit
+// 				-webkit-transition: all .25s 
+// 				-moz-transition: all .25s
+// 				-ms-transition: all .25s
+// 				-o-transition: all .25s
+// 				transition: all .25s
+// 				&::before
+// 					content: ''
+// 					position: absolute
+// 					width: 120%
+// 					height: 110vh
+// 					top: 0
+// 					left: 0
+// 					background: inherit
+// 					-webkit-filter: blur(10px)
+// 					-moz-filter: blur(10px)
+// 					-ms-filter: blur(10px)
+// 					-o-filter: blur(10px)
+// 					filter: blur(10px)
+// 				.menu_icon
+// 					span
+// 						display: block
+// 					&:hover
+// 						-webkit-transform: rotate(90deg)
+// 						-moz-transform: rotate(90deg)
+// 						-ms-transform: rotate(90deg)
+// 						-o-transform: rotate(90deg)
+// 						transform: rotate(90deg)
+// 						transform-origin: center center
+// 						span
+// 							display: block
+// 							width: 2px
+// 							height: 2px
+// 							opacity: .3
+// 						span
+// 							&:nth-child(2)
+// 								width: 7px
+// 								height: 7px
+// 								transform: scale(2)
+// 								opacity: 1
+// 				.menu-wrap
+// 					display: block
+// 					position: absolute
+// 	.wrap.flex-container
+// 		display: -ms-flexbox
+// 		display: -webkit-flex
+// 		display: flex
+// 		-webkit-flex-direction: column
+// 		-ms-flex-direction: column
+// 		flex-direction: column
+// 		-webkit-flex-wrap: nowrap
+// 		-ms-flex-wrap: nowrap
+// 		flex-wrap: nowrap
+// 		-webkit-justify-content: center
+// 		-ms-flex-pack: center
+// 		justify-content: center
+// 		-webkit-align-content: center
+// 		-ms-flex-line-pack: center
+// 		align-content: center
+// 		-webkit-align-items: flex-start
+// 		-ms-flex-align: start
+// 		align-items: flex-start
+// 		.flex-item
+// 			&:nth-child(1), &:nth-child(2), &:nth-child(3)
+// 				-webkit-order: 0
+// 				-ms-flex-order: 0
+// 				order: 0
+// 				-webkit-flex: 0 1 auto
+// 				-ms-flex: 0 1 auto
+// 				flex: 0 1 auto
+// 				-webkit-align-self: auto
+// 				-ms-flex-item-align: auto
+// 				align-self: auto
+// .main-aside.full-aside
+// 	width: 50vw
 
 
 .first-section
