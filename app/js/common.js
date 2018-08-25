@@ -15,14 +15,8 @@ $(function() {
 				var row = $(this);
 					setTimeout(function() {
 						row.removeClass(play);
+						blur_bl.removeClass(blur).css('width','100px');
 				}, 50*i);
-			});
-			blur_bl.removeClass(blur);
-			$(blur_bl.get().reverse()).each(function(e) {
-				var row_1 = $(this);
-					setTimeout(function() {
-						blur_bl.removeClass(blur);
-				}, 50*e);
 			});
 		}
 
@@ -32,14 +26,8 @@ $(function() {
 				var row = $(this);
 					setTimeout(function() {
 						row.addClass(play);
+						blur_bl.addClass(blur).css('width','50vh');
 				}, 50*i);
-			});
-			blur_bl.addClass(blur);
-			$(blur_bl.get().reverse()).each(function(e) {
-				var row_1 = $(this);
-					setTimeout(function() {
-						blur_bl.addClass(blur);
-				}, 50*e);
 			});
 		}
 
